@@ -16,7 +16,3 @@ export class Question {
         return `$$ ${this.num}^2 $$`
     }
 }
-
-let q = new Question();
-console.log(q.qtxt);
-console.log(q.cans);

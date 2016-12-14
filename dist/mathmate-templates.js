@@ -1,13 +1,13 @@
 /**
- * vuex v1.0.0
+ * MathMateTemplates v0.1.0
  * (c) 2016 Prashant S Khodade
  * @license MIT
  */
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global.MathMateTemplates = global.MathMateTemplates || {})));
-}(this, (function (exports) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (factory());
+}(this, (function () { 'use strict';
 
 var Question = (function () {
     function Question() {
@@ -29,9 +29,6 @@ var Question = (function () {
     });
     return Question;
 }());
-var q = new Question();
-console.log(q.qtxt);
-console.log(q.cans);
 
 var Question$1 = (function () {
     function Question() {
@@ -53,9 +50,6 @@ var Question$1 = (function () {
     });
     return Question;
 }());
-var q$1 = new Question$1();
-console.log(q$1.qtxt);
-console.log(q$1.cans);
 
 var Question$2 = (function () {
     function Question() {
@@ -77,9 +71,6 @@ var Question$2 = (function () {
     });
     return Question;
 }());
-var q$2 = new Question$2();
-console.log(q$2.qtxt);
-console.log(q$2.cans);
 
 var Question$3 = (function () {
     function Question() {
@@ -116,9 +107,6 @@ var Question$3 = (function () {
     });
     return Question;
 }());
-var q$3 = new Question$3();
-console.log(q$3.qtxt);
-console.log(q$3.cans);
 
 var Question$4 = (function () {
     function Question() {
@@ -140,9 +128,6 @@ var Question$4 = (function () {
     });
     return Question;
 }());
-var q$4 = new Question$4();
-console.log(q$4.qtxt);
-console.log(q$4.cans);
 
 var Question$5 = (function () {
     function Question() {
@@ -171,9 +156,6 @@ var Question$5 = (function () {
     });
     return Question;
 }());
-var q$5 = new Question$5();
-console.log(q$5.qtxt);
-console.log(q$5.cans);
 
 var Question$6 = (function () {
     function Question() {
@@ -202,9 +184,6 @@ var Question$6 = (function () {
     });
     return Question;
 }());
-var q$6 = new Question$6();
-console.log(q$6.qtxt);
-console.log(q$6.cans);
 
 var Question$7 = (function () {
     function Question() {
@@ -227,9 +206,6 @@ var Question$7 = (function () {
     });
     return Question;
 }());
-var q$7 = new Question$7();
-console.log(q$7.qtxt);
-console.log(q$7.cans);
 
 var Question$8 = (function () {
     function Question() {
@@ -268,10 +244,9 @@ var Question$8 = (function () {
     });
     return Question;
 }());
-var q$8 = new Question$8();
-console.log(q$8.qtxt);
-console.log(q$8.cans);
 
-Object.defineProperty(exports, '__esModule', { value: true });
+var q = new Question$8();
+console.log(q.qtxt);
+console.log(q.cans);
 
 })));

@@ -31,7 +31,3 @@ export class Question {
         return `$$ \\sqrt[${this.xpow}]{X}+${this.y} = \\sqrt[${this.zpow}]{${this.zn}} $$, value of $$ X $$ is`
     }
 }
-
-let q = new Question();
-console.log(q.qtxt);
-console.log(q.cans);

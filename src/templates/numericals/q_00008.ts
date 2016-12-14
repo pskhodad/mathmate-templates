@@ -18,7 +18,3 @@ export class Question {
         return `$$ ${this.x} \\times ${this.x} - 2 \\times ${this.x} \\times ${this.y} + ${this.y} \\times ${this.y} $$`
     }
 }
-
-let q = new Question();
-console.log(q.qtxt);
-console.log(q.cans);

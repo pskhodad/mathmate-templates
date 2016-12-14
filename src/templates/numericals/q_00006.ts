@@ -20,7 +20,3 @@ export class Question {
         return `Average of 4 consecutive numbers is ${this.avg}, largest number is `
     }
 }
-
-let q = new Question();
-console.log(q.qtxt);
-console.log(q.cans);

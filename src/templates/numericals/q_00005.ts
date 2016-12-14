@@ -16,7 +16,3 @@ export class Question {
         return `$$ ${this.num} \\times 99 $$`
     }
 }
-
-let q = new Question();
-console.log(q.qtxt);
-console.log(q.cans);
