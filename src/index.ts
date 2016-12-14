@@ -1,5 +1,5 @@
-import * as mathmate_templates from './templates';
+export * from './templates';
 
-let q = new mathmate_templates.numericals_00009();
-console.log(q.qtxt);
-console.log(q.cans);
+//let q = new mathmate_templates.lcm_and_hcf_00003();
+//console.log(q.qtxt);
+//console.log(q.cans);
