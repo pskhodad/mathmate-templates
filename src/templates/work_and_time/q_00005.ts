@@ -53,6 +53,6 @@ export class Question {
     }
 
     get qtxt() {
-        return `One woman alone can finish a work in ${this.W_1} hours. Its takes ${this.C_1} hours for single child to finish the same work. How many hours will it take if ${this.x} women and ${this.y} children work together?`
+        return `${this.m} women can finish a work in ${this.W_m} hours. Its takes ${this.C_n} hours for ${this.n} children to finish the same work. If ${this.x} women and ${this.y} children are working together, how many hours will it take to finish the work?`
     }
 }

@@ -1,8 +1,9 @@
 import chance = require('../../extlibs/wrap_chance');
 import math = require('../../extlibs/wrap_math');
 import _ = require('../../extlibs/wrap_lodash');
-import { memoize } from '../../decorators/memoize';
+import { memoizeall } from '../../decorators/memoize';
 
+@memoizeall
 export class Question {
     
     width: number;
@@ -11,7 +12,6 @@ export class Question {
         this.width = chance.natural({ min: 5, max: 25 }) * 2;
     }
 
-    @memoize
     get length() {
         return chance.pickone(_.range(10, 50).filter((elem) => { return math.gcd(elem, this.width) > 1;}));
     }

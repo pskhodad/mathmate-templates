@@ -40,12 +40,9 @@ var Question = (function () {
         enumerable: true,
         configurable: true
     });
-    __decorate([
-        memoize_1.memoize
-    ], Question.prototype, "ts", null);
-    __decorate([
-        memoize_1.memoize
-    ], Question.prototype, "names", null);
+    Question = __decorate([
+        memoize_1.memoizeall
+    ], Question);
     return Question;
 }());
 exports.Question = Question;

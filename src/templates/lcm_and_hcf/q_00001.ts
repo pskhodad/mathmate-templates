@@ -1,7 +1,8 @@
 import chance = require('../../extlibs/wrap_chance');
 import math = require('../../extlibs/wrap_math');
-import { memoize } from '../../decorators/memoize';
+import { memoizeall } from '../../decorators/memoize';
 
+@memoizeall
 export class Question {
     
     nplayers: number;
@@ -10,12 +11,10 @@ export class Question {
         this.nplayers = chance.natural({ min: 2, max: 4 });
     }
 
-    @memoize
     get ts() : Array<number> {
         return chance.n(chance.natural, this.nplayers, { min: 5, max: 30 });
     }
 
-    @memoize
     get names() : Array<string> {
         return chance.unique(chance.first, this.nplayers, { comparator: function (arr, val) { return arr.indexOf(val) !== -1; } });
     }

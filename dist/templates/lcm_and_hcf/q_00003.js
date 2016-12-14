@@ -35,9 +35,9 @@ var Question = (function () {
         enumerable: true,
         configurable: true
     });
-    __decorate([
-        memoize_1.memoize
-    ], Question.prototype, "n2", null);
+    Question = __decorate([
+        memoize_1.memoizeall
+    ], Question);
     return Question;
 }());
 exports.Question = Question;
