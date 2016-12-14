@@ -1,9 +1,9 @@
 export declare class Question {
-    E: number;
-    D: number;
-    W_div_D: number;
-    m: number;
-    n: number;
+    private E;
+    private D;
+    private W_div_D;
+    private m;
+    private n;
     constructor();
     readonly W: number;
     readonly x: number;
