@@ -1,0 +1,29 @@
+{
+  "name": "mathmate-templates",
+  "version": "0.1.0",
+  "description": "Typescript classes which act as template to generate random maths questions",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c build/rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pskhodad/mathmate-templates.git"
+  },
+  "keywords": [],
+  "author": "prashant <prashant.s.khodade@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pskhodad/mathmate-templates/issues"
+  },
+  "homepage": "https://github.com/pskhodad/mathmate-templates#readme",
+  "dependencies": {
+    "@types/chance": "^0.7.31",
+    "@types/mathjs": "0.0.31",
+    "chance": "^1.0.4",
+    "mathjs": "^3.8.0"
+  },
+  "devDependencies": {
+    "rollup-plugin-typescript": "^0.8.1"
+  }
+}
