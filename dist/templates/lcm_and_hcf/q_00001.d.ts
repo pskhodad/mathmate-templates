@@ -1,8 +1,8 @@
 export declare class Question {
     nplayers: number;
-    ts: Array<number>;
-    names: Array<string>;
     constructor();
+    readonly ts: Array<number>;
+    readonly names: Array<string>;
     readonly cans: any;
     readonly qtxt: string;
 }

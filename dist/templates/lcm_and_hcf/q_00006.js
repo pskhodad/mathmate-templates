@@ -7,46 +7,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var chance = require('../../extlibs/wrap_chance');
 var math = require('../../extlibs/wrap_math');
+var _ = require('../../extlibs/wrap_lodash');
 var memoize_1 = require('../../decorators/memoize');
 var Question = (function () {
     function Question() {
-        this.nplayers = chance.natural({ min: 2, max: 4 });
+        this.n1 = chance.natural({ min: 5, max: 25 }) * 2;
+        this.n2 = chance.natural({ min: 5, max: 25 }) * 2;
     }
-    Object.defineProperty(Question.prototype, "ts", {
+    Object.defineProperty(Question.prototype, "n3", {
         get: function () {
-            return chance.n(chance.natural, this.nplayers, { min: 5, max: 30 });
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Question.prototype, "names", {
-        get: function () {
-            return chance.unique(chance.first, this.nplayers, { comparator: function (arr, val) { return arr.indexOf(val) !== -1; } });
+            var _this = this;
+            return chance.pickone(_.range(10, 50).filter(function (elem) { return math.gcd(elem, _this.n1) > 1; }));
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Question.prototype, "cans", {
         get: function () {
-            return math.lcm.apply(null, this.ts);
+            return math.lcm(math.lcm(this.n1, this.n2), this.n3);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Question.prototype, "qtxt", {
         get: function () {
-            return this.names + " start running around a circular stadium and complete one round in " + this.ts + " seconds respectively. In how much time will they meet at starting point again?";
+            return "LCM of " + this.n1 + ", " + this.n2 + " and " + this.n3;
         },
         enumerable: true,
         configurable: true
     });
     __decorate([
         memoize_1.memoize
-    ], Question.prototype, "ts", null);
-    __decorate([
-        memoize_1.memoize
-    ], Question.prototype, "names", null);
+    ], Question.prototype, "n3", null);
     return Question;
 }());
 exports.Question = Question;
-//# sourceMappingURL=q_00001.js.map
+//# sourceMappingURL=q_00006.js.map

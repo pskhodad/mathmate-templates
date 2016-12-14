@@ -6,46 +6,60 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var chance = require('../../extlibs/wrap_chance');
-var math = require('../../extlibs/wrap_math');
 var memoize_1 = require('../../decorators/memoize');
 var Question = (function () {
     function Question() {
-        this.nplayers = chance.natural({ min: 2, max: 4 });
+        this.E = chance.natural({ min: 2, max: 3 });
+        this.D = chance.natural({ min: 5, max: 25 });
+        this.W_div_D = chance.natural({ min: 1, max: 3 }) * 20;
+        this.m = chance.pickone([2, 4, 5, 10]);
+        this.n = chance.pickone([2, 4, 5, 10]);
     }
-    Object.defineProperty(Question.prototype, "ts", {
+    Object.defineProperty(Question.prototype, "W", {
         get: function () {
-            return chance.n(chance.natural, this.nplayers, { min: 5, max: 30 });
+            return this.W_div_D * this.D;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Question.prototype, "names", {
+    Object.defineProperty(Question.prototype, "x", {
         get: function () {
-            return chance.unique(chance.first, this.nplayers, { comparator: function (arr, val) { return arr.indexOf(val) !== -1; } });
+            return chance.natural({ min: 5, max: (this.W_div_D - 2) });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Question.prototype, "y", {
+        get: function () {
+            return this.E * (this.W_div_D - this.x);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Question.prototype, "W_m", {
+        get: function () {
+            return this.W / this.m;
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Question.prototype, "cans", {
         get: function () {
-            return math.lcm.apply(null, this.ts);
+            return (this.E * this.W);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Question.prototype, "qtxt", {
         get: function () {
-            return this.names + " start running around a circular stadium and complete one round in " + this.ts + " seconds respectively. In how much time will they meet at starting point again?";
+            return this.x + " women and " + this.y + " children together take " + this.D + " hours to complete a piece of work. If " + this.m + " women take " + this.W_m + " hours to complete the work, how many hours " + this.n + " children will take";
         },
         enumerable: true,
         configurable: true
     });
     __decorate([
         memoize_1.memoize
-    ], Question.prototype, "ts", null);
-    __decorate([
-        memoize_1.memoize
-    ], Question.prototype, "names", null);
+    ], Question.prototype, "x", null);
     return Question;
 }());
 exports.Question = Question;

@@ -4,4 +4,5 @@ function __export(m) {
 }
 __export(require('./numericals'));
 __export(require('./lcm_and_hcf'));
+__export(require('./work_and_time'));
 //# sourceMappingURL=index.js.map
