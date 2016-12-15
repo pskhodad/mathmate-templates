@@ -9,11 +9,11 @@ Object.keys(mathmate_templates).forEach((tplname) => {
 });
 */
 
-let q1 = new mathmate_templates.work_and_time_00005();
+let q1 = new mathmate_templates.time_and_distance_00009();
 console.log(q1.qtxt);
 console.log(q1.cans);
 
-let q2 = new mathmate_templates.work_and_time_00005();
+let q2 = new mathmate_templates.time_and_distance_00009();
 console.log(q2.qtxt);
 console.log(q2.cans);
 
